@@ -2,7 +2,7 @@ title: bitbrain
 author: bitbrain
 email: miguel-gonzalez@gmx.de
 description: > # this means to ignore newlines until "show_exerpts:"
-  Hi there, I am Miguel and I create games! Occasionally I blog about cloud, gamedev and web.
+  Hi there, I am Miguel and I create games! Occasionally I blog about cloud, gamedev and web. Born and raised in Germany, studied in the Netherlands, currently living in the UK.
 show_excerpts: false # set to true to show excerpts on the homepage
 
 paginate: 5
