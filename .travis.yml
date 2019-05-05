@@ -6,6 +6,7 @@ branches:
 script:
   - JEKYLL_ENV=production bundle exec jekyll build --destination site
 deploy:
+  repo: bitbrain/bitbrain.github.io
   provider: pages
   local-dir: ./site
   target-branch: master
