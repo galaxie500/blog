@@ -1,6 +1,6 @@
 ---
 layout: post
-title: game design: one finger to rule them all
+title: game design\: one finger to rule them all
 tags: gamedev devlog scape gamedesign
 ---
 Nowadays, smartphones are everywhere. People are swiping up and down, left and right, panning in, double tapping like champions. What people don't want is having to use more than a single finger, god forbit a second hand just to get a task done on their device. Game developers such as [King](https://king.com) have taken that principle to another level for a simple reason: **Accessibility**.
