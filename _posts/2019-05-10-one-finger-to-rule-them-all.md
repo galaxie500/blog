@@ -31,7 +31,7 @@ Currently I am working on a small game called **scape** - it is a fast-paced 2D 
 
 Basically, the idea is to reach the end of the level without falling out of bounds. Touch the screen to jump (and effectively flip gravity). This is how my game **scape** loks like:
 
-<video controls autoplay preload="auto" playsinline="" poster="https://pbs.twimg.com/tweet_video_thumb/D3dLC8CW4AAHcjP.jpg" src="https://video.twimg.com/tweet_video/D3dLC8CW4AAHcjP.mp4" type="video/mp4"></video>
+<video controls autoplay preload="auto" playsinline="" poster="https://pbs.twimg.com/tweet_video_thumb/D3dLC8CW4AAHcjP.jpg" src="https://video.twimg.com/tweet_video/D3dLC8CW4AAHcjP.mp4" type="video/mp4" style="width:100%;"></video>
 
 The first thing the player does is touching the screen and one notices that the character will jump as a consequence. However, this has some impact on the initial game design:
 
