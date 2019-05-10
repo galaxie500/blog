@@ -1,6 +1,7 @@
 ---
 layout: post
 title: "Game design: one finger to rule them all"
+description: I love creating games which can be played with just one touch
 tags: gamedev devlog scape gamedesign
 ---
 Nowadays, smartphones are everywhere. People are swiping up and down, left and right, panning in, double tapping like champions. What people don't want is having to use more than a single finger, god forbit a second hand just to get a task done on their device. Game developers such as [King](https://king.com) have taken that principle to another level for a simple reason: **Accessibility**.
@@ -31,7 +32,7 @@ Currently I am working on a small game called **scape** - it is a fast-paced 2D 
 
 Basically, the idea is to reach the end of the level without falling out of bounds. Touch the screen to jump (and effectively flip gravity). This is how my game **scape** loks like:
 
-<video controls autoplay preload="auto" playsinline="" poster="https://pbs.twimg.com/tweet_video_thumb/D3dLC8CW4AAHcjP.jpg" src="https://video.twimg.com/tweet_video/D3dLC8CW4AAHcjP.mp4" type="video/mp4" style="width:100%;"></video>
+![scape-showcase](/public/media/scape-showcase.gif)
 
 The first thing the player does is touching the screen and one notices that the character will jump as a consequence. However, this has some impact on the initial game design:
 
@@ -39,5 +40,16 @@ The first thing the player does is touching the screen and one notices that the 
 * the player should notice that he needs to do _something_ in order to progress
 * the player should also learn in the beginning what the consequences are if no action is taken
 
-To solve all these questions I did a simple trick: I placed a block in front of the player. As a result the player bumps into the block at some point, gets stuck and the moving camera will kill the player if out of bounds.
+To solve all these questions I did a simple trick: I placed a block in front of the player. As a result the player bumps into the block at some point, gets stuck and the moving camera will kill the player if out of bounds:
 
+![scape-block](/public/media/scape-tutorial-block.gif)
+
+The player has no other choice than trying to touch the screen. Each level has been designed so the player automatically initiates actions to play the game, without having an explicit tutorial:
+
+![scape-block-skip](/public/media/scape-tutorial-block-skip.gif)
+
+As a game designer, this is not obvious at first. Only after a couple of iterations I can eventually refine the level structure to ensure the best possible game experience.
+
+# Into the Future
+
+Currently I am refining the level design, updating assets and rewriting the level selection flow. In another blog article I am going to elaborate on that more detailed. Stay tuned!
