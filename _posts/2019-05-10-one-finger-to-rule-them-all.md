@@ -4,9 +4,9 @@ title: "Game design: one finger to rule them all"
 description: I love creating games which can be played with just one touch
 tags: gamedev devlog scape gamedesign
 ---
-Nowadays, smartphones are everywhere. People are swiping up and down, left and right, panning in, double tapping like champions. What people don't want is having to use more than a single finger, god forbit a second hand just to get a task done on their device. Game developers such as [King](https://king.com) have taken that principle to another level for a simple reason: **Accessibility**.
+Everyone owns a smartphone nowadays. People are swiping within their apps up and down, left and right, panning in and double tap  whenever they get the opportunity. What people definitely don't want is having to use more than a single finger. When looking at popular apps like Instagram, Twitter or Boost, the entire UX flow is designed for single-hand use. Game developers such as [King](https://king.com) have taken that principle to another level for a simple reason: **Accessibility**.
 
-If you want your game to be played by the masses, it needs to be accessible. In order for a game to be accessible, it needs to be supported by the hardware and the user should not get confused how to actually play the game. Personally, I always disliked the fact that controls are being emulated on smartphones via HUDs like this:
+If you want your game to be played by the masses, it needs to be accessible. In order for a game to be accessible, it needs to be supported by the hardware and the user should not get confused how to actually play the game. Many mobile games have long and annoying tutorials, explaining the complex UI and input methods such as buttons and virtual HUDs. Personally, I always disliked the fact that controls are being emulated on smartphones via HUDs like this:
 
 ![fortnite-hud](https://icdn9.digitaltrends.com/image/fortnite-mobile-beginners-guide-gather-720x720.jpg)
 
@@ -14,13 +14,15 @@ Especially on a busy train or a cigarette in one hand, playing those kind of gam
 
 # Simple controls are challenging
 
-As a user I do not want to read through manuals or tutorials to learn how to actually play the game. Time is much better spent and there are so many games out there which do not require any tutorials whatsoever. Thus, designing a simple input system which can be just with just one finger is rather challenging:
+There is a simple reason why so many games try to avoid simple input but instead use more complex input mechanisms: it can become rather complicated to communicate how the game can be played, when there is just a single input method! On the other hand, as a user I do not want to read through manuals or tutorials to learn how to actually play the game. Time is much better spent and there are so many games out there which do not require any tutorials whatsoever. Thus, designing a simple input system which can be just with just one finger is key. Before we can implement simple input, the following questions need to be answered:
 
 * how does the player know if he should swipe, pan or where to click?
 * how do I prevent that the player accidentally uses wrong controls?
 * how can I ensure the player learns the controls naturally by just trying out?
 
-> the more limited the controls are, the more accessible the game is. However, the amount of input combinations decreases with limited controls.
+Answering these questions gave me confidence to build all my games with simple controls. This made designing UI components rather hard but eventually paid of by having a really simple game experience.
+
+> The more limited the controls are, the more accessible the game is. However, the amount of input combinations decreases with limited controls.
 
 Finding the perfect balance between those two is the real challenge.
 
@@ -49,6 +51,16 @@ The player has no other choice than trying to touch the screen. Each level has b
 ![scape-block-skip](/public/media/scape-tutorial-block-skip.gif)
 
 As a game designer, this is not obvious at first. Only after a couple of iterations I can eventually refine the level structure to ensure the best possible game experience.
+
+# The dark side of the moon
+
+Having a character jump via touch is not the most difficult mechanic. The **One Touch Mechanic** made things especially more tricky when it came to menu flow:
+
+* how do I communicate to the player that he has to swipe in order to switch to the next level in the stage selection?
+* how does a player know he needs to touch the screen to enter a level?
+* how does a player know he requires to keep the screen touched to skip a cutscene?
+
+Those questions are just partially answered and I am currently about to rewrite the entire menu flow to improve on that drastically.
 
 # Into the Future
 
