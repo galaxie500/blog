@@ -73,4 +73,6 @@ In-game I then used [Universal Tween Engine](https://github.com/AurelienRibon/un
 
 Within my game code I then rendered these particle effects over the animated and scaled sprites. Later on I also implemented lighting to my game. At that point, I purposfully attached pink lights onto the byte objects so they are visible from the far!
 
-I really enjoy doing manual animation since you have more control over each individual pixel on the screen!
+I really enjoy doing manual animation since you have more control over each individual pixel on the screen! The game will release later this year. In the meantime you can already download a pre-release version. Feel free to give me feedback either here or on [twitter](https://twitter.com/bitbrain_)! If you are especially interested in further development on this project, make sure to [checkout this Moment page](https://twitter.com/i/moments/1127137651549667328) I created.
+
+<iframe src="https://itch.io/embed/357509?bg_color=15171A&amp;fg_color=05fecf&amp;link_color=f20179&amp;border_color=15171A" width="100%" height="167" frameborder="0"></iframe>
