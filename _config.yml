@@ -24,6 +24,9 @@ dash:
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
+    - url: https://soundcloud.com/myrealityde
+      icon: soundcloud
+      color: orange
     - url: https://twitter.com/bitbrain_
       icon: twitter-square
       color: cyan
