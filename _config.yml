@@ -30,9 +30,15 @@ dash:
     - url: https://bitbrain.itch.io
       icon: itch-io
       color: red
+    - url: https://www.twitch.tv/bitbrain_
+      icon: twitch
+      color: purple
+    - url: https://www.youtube.com/channel/UCZDjQltHRNiXIYXMBeLDleA
+      icon: youtube
+      color: red
     - url: https://github.com/bitbrain
       icon: github-square
-      color: purple
+      color: yellow
 
 # Build settings
 theme: jekyll-dash
