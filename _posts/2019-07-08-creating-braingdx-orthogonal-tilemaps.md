@@ -31,7 +31,7 @@ This will render your multi-layered map onto the screen. Job is done then. Or  i
 
 Given a multi-layered map like this in [Tiled](https://www.mapeditor.org/):
 
-![los-screenshot](/public/media/legend-of-studentenfutter-screenshot.jpg)
+[![los-screenshot](/public/media/legend-of-studentenfutter-screenshot.jpg)](https://bitbrain.itch.io/the-legend-of-studentenfutter)
 
 Do you note the bridge? How can I achieve that the player gets either rendered below the bridge (when walking beneath it) or is walking on the bridge? What about automatic collision detection? How can I prevent that the player is able to fall off the bridge, but can walk beneath it without problems? All these challenges can not be solved by using `OrthogonalTiledMapRenderer` . Instead, you have to write your own z-index ordering logic. Don't worry though, these challenges have been solved within **braingdx**:
 ```java
