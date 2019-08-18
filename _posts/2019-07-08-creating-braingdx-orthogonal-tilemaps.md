@@ -105,7 +105,7 @@ So the game object is positioned at a `yIndex` of **3**. The framework does not 
 
 This results to the following computation:
 ```
-zIndex = (0 + 1) * 10 - 3 = **7**
+zIndex = (0 + 1) * 10 - 3 = 7
 ```
 So the player at its current position will have a `zIndex` of **7**. This is all done by **braingdx** internally. Since game objects are rendered in the order of their `zIndex` attribute, it is ensured that game objects can be dynamically drawn before or after a particular tiledmap layer.
 
