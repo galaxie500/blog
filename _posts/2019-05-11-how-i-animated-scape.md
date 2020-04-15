@@ -1,6 +1,7 @@
 ---
 layout: post
 title: How I animated scape
+published: false
 tags: gamedev devlog scape pixelart pyxel tiled
 ---
 In a [previous blog post](/2019/05/10/one-finger-to-rule-them-all.html) I talked about game design decisions I made in my most recent game project called [scape](https://github.com/bitbrain/scape). You might notice that I have a particular animation style. At the current stage of development scape looks like this:
