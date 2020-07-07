@@ -1,5 +1,5 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
-gem "jekyll-dash"
-gem "liquid-md5"
-gem "jekyll-tagging"
+gem 'jekyll-dash', '~> 2.0.0'
+gem 'liquid-md5'
+gem 'jekyll-tagging'
