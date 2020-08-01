@@ -29,7 +29,7 @@ In order to make this entire process work, we first have to setup a so called to
 
 Next, we are going to set up the secrets within Github. Head over to `Account Settings -> Developer settings -> Personal access tokens` and generate a new token:
 
-![gh-token](/public/media/github-create-token.png)
+![gh-token](/public/media/github-create-token.PNG)
 
 You will not be able to see this token again once generated! Save it somewhere locally in a file for later use.
 
@@ -37,7 +37,7 @@ You will not be able to see this token again once generated! Save it somewhere l
 
 Next, head to your Github repository configuration page and add secrets:
 
-![gh-secrets](/public/media/github-create-secrets.png)
+![gh-secrets](/public/media/github-create-secrets.PNG)
 
 - `BUTLER_CREDENTIALS` is the value of the itch.io key you previously generated
 - `GH_CREDENTIALS` is the value of your Github token you previously generated
@@ -53,7 +53,7 @@ It is **very** important to use a custom `GH_CREDENTIALS` within Github actions.
 
 Within Godot, head over to `Project -> Export...` and create a new export entry:
 
-![godot-export](/public/media/godot-export-project.png)
+![godot-export](/public/media/godot-export-project.PNG)
 
 Also, make sure to define an export path and give it a name (e.g. **yourgame-windows**). This will be the name of the game file in itch.io. Saving your configuration automatically generates a `export_presets.cfg` file that you need to commit to your Github repository. Make sure that your `.gitignore` does not accidentally exclude this file!
 
@@ -148,8 +148,8 @@ jobs:
 
 Voila! Now commit and push everything and it should automatically create a release for you:
 
-![github-release](/public/media/github-create-release.png)
+![github-release](/public/media/github-create-release.PNG)
 
 After the release is created, Github will automatically trigger the next action to publish your game to itch.io:
 
-![github-itchio](/public/media/github-export-to-itch.png)
+![github-itchio](/public/media/github-export-to-itch.PNG)
