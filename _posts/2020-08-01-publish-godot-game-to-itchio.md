@@ -100,6 +100,7 @@ jobs:
           relative_project_path: .
         env:
           GITHUB_TOKEN: ${% raw %}{{ secrets.GH_CREDENTIALS }}{% endraw %}
+          ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
 ```
 Let's have a look into the steps. First, we define when the action should get triggered. If you do not want to create a new release
 everytime you push, replace the branch with a different branch, e.g. `release`
