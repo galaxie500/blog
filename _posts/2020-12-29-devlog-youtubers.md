@@ -9,7 +9,7 @@ Finally, after years of hiding, I decided this year [to become a Youtuber](https
 
 # The four types of gamedev content
 
-Before I became a creator, I used to only watch devlogs myself. I am probably subscribes to over 80 different creators and each of them has their unique strengths. Generally, they can be categorised as follows:
+Before I became a creator, I used to only watch devlogs myself. I am probably subscribed to over 80 different creators and each of them has their unique strengths. Generally, they can be categorised as follows:
 
 ## Type A: The informative Game Developer
 
