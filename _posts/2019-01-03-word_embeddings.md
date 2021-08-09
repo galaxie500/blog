@@ -1,6 +1,7 @@
 ---
 layout: post
-title:  "building a \"no sweat\" word embeddings"
+title:  "Building a \"no sweat\" word embeddings"
+description: This article introduces a simple word embeddings model trained from nltk brown word corpus.
 tags: ml nlp introduction
 usemathjax: true
 ---
@@ -9,8 +10,9 @@ usemathjax: true
 
 The large number of English words can make language-based applications daunting.  To cope with this, it is helpful to have a clustering or embedding of these words, so that words with similar meanings are clustered together, or have embeddings that are close to one another. 
 
-But how can we get at the meanings of words?  John Firth (1957) put it thus:
+But how can we get at the meanings of words?
   > "You shall know a word by the company it keeps."
+  >   - John Firth (1957)
 
 That is, words that tend to appear in similar contexts are likely to be related.  
 
