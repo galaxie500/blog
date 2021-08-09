@@ -6,7 +6,7 @@ branches:
 before_install:
 - gem install bundler -v 2.0.1
 script:
-  - "./setup"
+  - JEKYLL_ENV=production bundle exec jekyll build --destination site
 deploy:
   repo: galaxie500/galaxie500.github.io
   provider: pages
