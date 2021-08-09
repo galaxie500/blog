@@ -249,7 +249,7 @@ Output:
     #Iterations:    -> 3576
 
 
-- Method 2: Pick coordinate $i$ that has greatest gradient in absolute value at each iteration
+- Method 2: Pick coordinate $$i$$ that has greatest gradient in absolute value at each iteration
 
 
 ```python

@@ -12,7 +12,7 @@ The large number of English words can make language-based applications daunting.
 
 But how can we get at the meanings of words?
   > "You shall know a word by the company it keeps."
-  >   - John Firth (1957)
+  >    - John Firth (1957)
 
 That is, words that tend to appear in similar contexts are likely to be related.  
 
