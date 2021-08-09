@@ -6,7 +6,7 @@ branches:
 before_install:
 - gem install bundler -v 2.0.1
 script:
-  - JEKYLL_ENV=production bundle exec jekyll build --destination site
+  - "./setup"
 deploy:
   repo: galaxie500/galaxie500.github.io
   provider: pages
@@ -14,6 +14,7 @@ deploy:
   target-branch: master
   email: deploy@travis-ci.org
   name: Deployment Bot
+  github-token: $GITHUB_TOKEN
   skip-cleanup: true
   keep-history: true
   on:
