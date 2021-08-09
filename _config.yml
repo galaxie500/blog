@@ -1,9 +1,10 @@
-title: bitbrain
-url: https://bitbrain.github.io
-author: bitbrain
-email: miguel-gonzalez@gmx.de
+title: brianHu
+author: Brian Hu
+email: huyuan17@gmail.com
+baseurl: ""
+url: "https://galaxie500.github.io"
 description: > # this means to ignore newlines until "show_exerpts:"
-  Hi there, I am Miguel and I create games! Occasionally I blog about cloud, gamedev and web. Born and raised in Germany, studied in the Netherlands, currently living in the UK.
+  Current Master of Data Science Candidate @ Univ of California San Diego, Data Engineer Intern @ Gotion, I blog about stuff I learned form data cience, data engineer and big data analytics.
 show_excerpts: false # set to true to show excerpts on the homepage
 
 paginate: 5
@@ -19,7 +20,7 @@ dash:
   date_format: "%b %-d, %Y"
 
   disqus:
-    shortname: bitbrain-github-io
+    shortname: galaxie500-github-io
 
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
@@ -46,6 +47,13 @@ dash:
 # Build settings
 theme: jekyll-dash
 
+# Enable mathjax and latex. See `_includes/head.html` for the
+# implementation.
+use_mathjax: true
+
 plugins:
   - liquid-md5
   - jekyll/tagging
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-paginate
