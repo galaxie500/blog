@@ -2,6 +2,7 @@
 layout: post
 title:  "stretching out support vector machine with calibrated estimation"
 tags: introduction ml nlp
+usemathjax: true
 ---
 
 # Introduction
