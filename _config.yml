@@ -25,24 +25,20 @@ dash:
   # generate social links in footer
   # supported colors: green, red, orange, blue, cyan, pink, teal, yellow, indigo, purple
   social_links:
-    - url: https://soundcloud.com/myrealityde
-      icon: soundcloud
-      color: orange
     - url: https://twitter.com/bitbrain_
       icon: twitter-square
       color: cyan
-    - url: https://bitbrain.itch.io
-      icon: itch-io
-      color: red
     - url: https://www.twitch.tv/bitbrain_
       icon: twitch
       color: purple
     - url: https://www.youtube.com/channel/UCZDjQltHRNiXIYXMBeLDleA
       icon: youtube
       color: red
-    - url: https://github.com/bitbrain
+    - url: https://github.com/galaxie500
       icon: github-square
-      color: yellow
+      color: purple
+
+show_author: true
 
 # Build settings
 theme: jekyll-dash
