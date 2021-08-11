@@ -1,11 +1,11 @@
-title: brianHu
+title: Brian Hu
 author: Brian Hu
 email: huyuan17@gmail.com
 baseurl: ""
 url: "https://galaxie500.github.io"
 description: > # this means to ignore newlines until "show_exerpts:"
-  Current Master of Data Science Candidate @ Univ of California San Diego, Data Engineer Intern @ Gotion, I blog about stuff I learned form data cience, data engineer and big data analytics.
-show_excerpts: false # set to true to show excerpts on the homepage
+  Master of Data Science Candidate @ Univ of California San Diego, Data Engineer Intern @ Gotion, Email: huyuan17@gmail.com
+show_excerpts: true # set to true to show excerpts on the homepage
 
 paginate: 5
 paginate_path: "/blog/page:num/"
