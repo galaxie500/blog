@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Monitoring Airbnb reviews over COVID-19 with folium HeatMapWithTime"
-description: Maybe you're familar with a heatmap, what about adding a timestamp?
+description: This article discusses ways of getting calibrated probability estimates on a linear SVC classifier.
 tags: EDA data-visulization tutorial time-series pandas folium plotly
 usemathjax: true
 ---
@@ -556,8 +556,7 @@ review_count_time_map = review_count_time_map.groupby('date').agg(lambda x: list
 review_count_time_map[['latitude','longitude','review_count']]
 ```
 
-
-
+output:
 
 <div>
 <style scoped>
