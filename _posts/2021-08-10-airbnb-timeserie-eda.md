@@ -6,11 +6,7 @@ tags: EDA data-visulization tutorial time-series pandas folium plotly
 usemathjax: true
 ---
 
-<br />
-
-# Introduction
-
-  
+# Introduction  
 
 This artile will walk through visualizing the fluctuations of Airbnb busineess affected by COVID-19 pandemic. Intuitively, we might have a rough guess what the curves will be looking like, however, I thought this would be interesting to practice both data processing and visulization when time-series attributes involved, what's more important, to better explore the data and express the insight to a wide variety of audience in a more approachable manner, an interactive visulization significantly helps.
 
@@ -18,13 +14,11 @@ This artile will walk through visualizing the fluctuations of Airbnb busineess a
   
 <br />
 
-# Data
-
-  
+### Data
 
 The dataset was downloaded from [InsideAirbnb-Hawaii-data](http://insideairbnb.com/get-the-data.html), the analysis results were based on a span of two year from July, 2019 to July, 2021.
 
-# Prerequisite
+### Prerequisite
 
 In addition to commonly used python data science packages(numpy, pandas, matplotlib, seaborn), here we also need install `plotly`, `folium`, `chart-studio`, those can be easily installed via pip under conda environment:
 ~~~sh
@@ -37,7 +31,6 @@ $ pip install chart-studio
 
 # Part 1. Visualizing with `matplotlib` and `plotly`
 
-<br />
 
 ## Inspecting Data
 
@@ -340,7 +333,7 @@ iplot(fig1)
 
 output:
 
-<iframe width="700" height="450" frameborder="0" scrolling="no" src="//plotly.com/~huyuan17/2.embed"></iframe>
+<iframe width="730" height="450" frameborder="0" scrolling="no" src="//plotly.com/~huyuan17/2.embed"></iframe>
 
 <br />
 
@@ -359,7 +352,7 @@ py.plot(fig1, filename = 'review_over_time', auto_open=True)
 
 <br />
 
-# Part 2. Reviews over time via `folium HeatMapWithTime` plugin
+# Part 2. Reviews via `folium HeatMapWithTime` plugin
 
 
 ## Data processing
