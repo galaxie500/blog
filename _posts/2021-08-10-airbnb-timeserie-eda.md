@@ -8,17 +8,15 @@ usemathjax: true
 
 <br />
 
-<iframe src="https://airbnb-map.netlify.app" width="700" height="500"></iframe>
-
-<br />
-
 ## Introduction
 
   
 
 This artile will walk through visualizing the fluctuations of Airbnb busineess affected by COVID-19 pandemic. Intuitively, we might have a rough guess what the curves will be looking like, however, I thought this would be interesting to practice both data processing and visulization when time-series attributes involved, what's more important, to better explore the data and express the insight to a wide variety of audience in a more approachable manner, an interactive visulization significantly helps.
 
+<iframe src="https://airbnb-map.netlify.app" width="725" height="475"></iframe>
   
+<br />
 
 ## Data
 
@@ -346,16 +344,7 @@ output:
 
 <br />
 
-#### Add a `rangeselector`
-
-[rangeSelector](https://gist.github.com/galaxie500/a45e67f59691ddd482956e708a53863e)
-
-output:
-
-<iframe width="700" height="450" frameborder="0" scrolling="no" src="//plotly.com/~huyuan17/4.embed"></iframe>
-
-
-Use following snippet to push the plotly object to `plotly express`, which generates embedding information for hosting the interactive image on web pages.
+Following snippet is used to push the plotly object to `plotly express`, which generates embedding information for hosting the interactive image on web pages.
 
 
 ```python
@@ -364,7 +353,6 @@ api_key = '' # your api key for plotly express - go to profile > settings > rege
 chart_studio.tools.set_credentials_file(username=username, api_key=api_key)
 
 py.plot(fig1, filename = 'review_over_time', auto_open=True)
-py.plot(fig2, filename = 'review_over_time', auto_open=True)
 ```
 
 
@@ -378,7 +366,7 @@ py.plot(fig2, filename = 'review_over_time', auto_open=True)
 
 #### Count reviews received for each listing each month
 
-As you probably already know, `folium` creates great interactive maps for visualization, here I am going to create a heat map along with time stamp by using its `HeatMapWithTime` plugin, before that there still some processing work need to complete in order to fit our data to the plugin. [Demo](https://github.com/python-visualization/folium/blob/master/examples/HeatMapWithTime.ipynb).
+As you probably already know, `folium` creates great interactive maps for visualization, here I am going to create a heat map along with time stamp by using its `HeatMapWithTime` plugin, before that there still some processing work need to complete in order to fit our data to the plugin. [A simple Demo](https://github.com/python-visualization/folium/blob/master/examples/HeatMapWithTime.ipynb).
 
 First, count how many reviews each listing received each day, then change the time range to Month, that is to record how many reviews each listing received each month. The reason that change time range from day to month is we don't want the final display moving too frequently so that we can clearly spot the moving trend.
 
@@ -782,6 +770,9 @@ hm.add_to(time_map)
 #time_map
 #time_map.save("index.html")
 ```
+output:
+
+<iframe src="https://airbnb-map.netlify.app" width="725" height="475"></iframe>
 
 <br />
 
