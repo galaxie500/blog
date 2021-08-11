@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Monitoring Airbnb reviews over COVID-19 with folium HeatMapWithTime plugin"
-description: Maybe you're familar with a heatmap, what about adding the timestamp on it?
+title:  "Monitoring Airbnb reviews over COVID-19 with folium HeatMapWithTime"
+description: Maybe you're familar with a heatmap, what about adding timestamp on it?
 tags: EDA data-visulization tutorial time-series pandas folium plotly
 usemathjax: true
 ---
@@ -310,7 +310,7 @@ plt.legend(fontsize=14)
 output:
 
     
-<img src="/assets/images/coordinate_descent.png">
+<img src="/assets/images/moving_avg.png">
     
 
 <br />
