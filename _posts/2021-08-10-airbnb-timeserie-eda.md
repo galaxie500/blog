@@ -6,9 +6,9 @@ tags: EDA data-visulization tutorial time-series pandas folium plotly
 usemathjax: true
 ---
 
+<br />
 
-
-<iframe src="https://airbnb-map.netlify.app" width="700" height="600"></iframe>
+<iframe src="https://airbnb-map.netlify.app" width="700" height="500"></iframe>
 
 <br />
 
@@ -319,9 +319,7 @@ output:
 <br />
 
 #### Insights
-
 - This analysis takes the number of reviews per day as an indicator of Airbnb business activity.  It dramaticly decreased after outbreak of COVID-19 in March, 2020.
-
 - The number of reviews keeps increasing which indicates the popularity of Airbnb was thriving before the pandemic. Meanwhile there is a clear seasonality pattern before the mid of Feb, 2020.
 
 <br />
@@ -344,7 +342,7 @@ iplot(fig1)
 
 output:
 
-<iframe width="775" height="500" frameborder="0" scrolling="no" src="//plotly.com/~huyuan17/2.embed"></iframe>
+<iframe width="700" height="450" frameborder="0" scrolling="no" src="//plotly.com/~huyuan17/2.embed"></iframe>
 
 <br />
 
@@ -354,7 +352,7 @@ output:
 
 output:
 
-<iframe width="775" height="500" frameborder="0" scrolling="no" src="//plotly.com/~huyuan17/4.embed"></iframe>
+<iframe width="700" height="450" frameborder="0" scrolling="no" src="//plotly.com/~huyuan17/4.embed"></iframe>
 
 
 Use following snippet to push the plotly object to `plotly express`, which generates embedding information for hosting the interactive image on web pages.
