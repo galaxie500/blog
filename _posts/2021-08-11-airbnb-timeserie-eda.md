@@ -5,12 +5,11 @@ description: Maybe you're familar with a heatmap, what about adding timestamp on
 tags: EDA data-visulization tutorial time-series pandas folium plotly
 usemathjax: true
 ---
-
 # Introduction  
 
 This artile will walk through visualizing the fluctuations of Airbnb busineess affected by COVID-19 pandemic. Intuitively, we might have a rough guess what the curves will be looking like, however, I thought this would be interesting to practice both data processing and visulization when time-series attributes involved, what's more important, to better explore the data and express the insight to a wide variety of audience in a more approachable manner, an interactive visulization significantly helps.
 
-<iframe src="https://airbnb-map.netlify.app" width="725" height="475"></iframe>
+<iframe src="https://airbnb-map.netlify.app" width="735" height="475"></iframe>
   
 <br />
 
@@ -333,7 +332,7 @@ iplot(fig1)
 
 output:
 
-<iframe width="730" height="450" frameborder="0" scrolling="no" src="//plotly.com/~huyuan17/2.embed"></iframe>
+<iframe width="735" height="450" frameborder="0" scrolling="no" src="//plotly.com/~huyuan17/2.embed"></iframe>
 
 <br />
 
@@ -794,7 +793,7 @@ hm.add_to(time_map)
 ```
 output:
 
-<iframe src="https://airbnb-map.netlify.app" width="725" height="475"></iframe>
+<iframe src="https://airbnb-map.netlify.app" width="735" height="475"></iframe>
 
 <br />
 
