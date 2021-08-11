@@ -3,7 +3,11 @@ layout: post
 title:  "Monitoring Airbnb reviews over COVID-19 with folium HeatMapWithTime plugin"
 description: Maybe you're familar with a heatmap, what about adding the timestamp on it?
 tags: EDA data-visulization tutorial time-series pandas folium plotly
+usemathjax: true
 ---
+
+
+<br />
 
 ## Introduction
 
@@ -26,54 +30,13 @@ In addition to commonly used python data science packages(numpy, pandas, matplot
 $ pip install plotly
 $ pip install folium
 $ pip install chart-studio
+~~~
 
-
-
-```python
-import numpy as np
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-#import boto3
-
-import folium
-from folium import plugins
-from folium.plugins import HeatMap
-from folium.plugins import HeatMapWithTime
-from folium.plugins import FastMarkerCluster
-
-import pandas as pd
-import chart_studio
-import chart_studio.plotly as py
-import plotly.graph_objs as go
-
-from plotly.offline import init_notebook_mode, iplot
-init_notebook_mode(connected=True)
-
-%matplotlib inline
-plt.style.use('seaborn-whitegrid')
-```
-
-
-<script type="text/javascript">
-window.PlotlyConfig = {MathJaxConfig: 'local'};
-if (window.MathJax) {MathJax.Hub.Config({SVG: {font: "STIX-Web"}});}
-if (typeof require !== 'undefined') {
-require.undef("plotly");
-requirejs.config({
-    paths: {
-        'plotly': ['https://cdn.plot.ly/plotly-2.2.0.min']
-    }
-});
-require(['plotly'], function(Plotly) {
-    window._Plotly = Plotly;
-});
-}
-</script>
-
-
+<br />
 
 ## Part 1. Visualizing with `matplotlib` and `plotly`
+
+<br />
 
 ### Inspecting Data
 
@@ -86,236 +49,9 @@ df_listing = pd.read_csv('listings.csv')
 ```
 
 
-
-```python
-df_listing.head(2)
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>id</th>
-      <th>listing_url</th>
-      <th>scrape_id</th>
-      <th>last_scraped</th>
-      <th>name</th>
-      <th>description</th>
-      <th>neighborhood_overview</th>
-      <th>picture_url</th>
-      <th>host_id</th>
-      <th>host_url</th>
-      <th>...</th>
-      <th>review_scores_communication</th>
-      <th>review_scores_location</th>
-      <th>review_scores_value</th>
-      <th>license</th>
-      <th>instant_bookable</th>
-      <th>calculated_host_listings_count</th>
-      <th>calculated_host_listings_count_entire_homes</th>
-      <th>calculated_host_listings_count_private_rooms</th>
-      <th>calculated_host_listings_count_shared_rooms</th>
-      <th>reviews_per_month</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5065</td>
-      <td>https://www.airbnb.com/rooms/5065</td>
-      <td>20210708132536</td>
-      <td>2021-07-09</td>
-      <td>MAUKA BB</td>
-      <td>Perfect for your vacation, Staycation or just ...</td>
-      <td>Neighbors here are friendly but are not really...</td>
-      <td>https://a0.muscache.com/pictures/36718112/1f0e...</td>
-      <td>7257</td>
-      <td>https://www.airbnb.com/users/show/7257</td>
-      <td>...</td>
-      <td>4.71</td>
-      <td>4.48</td>
-      <td>4.76</td>
-      <td>NaN</td>
-      <td>f</td>
-      <td>1</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.41</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>5269</td>
-      <td>https://www.airbnb.com/rooms/5269</td>
-      <td>20210708132536</td>
-      <td>2021-07-09</td>
-      <td>Upcountry Hospitality in the 'Auwai Suite</td>
-      <td>The 'Auwai Suite is a lovely, self-contained a...</td>
-      <td>We are located on the "sunny side" of Waimea, ...</td>
-      <td>https://a0.muscache.com/pictures/5b52b72f-5a09...</td>
-      <td>7620</td>
-      <td>https://www.airbnb.com/users/show/7620</td>
-      <td>...</td>
-      <td>4.91</td>
-      <td>5.00</td>
-      <td>4.82</td>
-      <td>119-269-5808-01R</td>
-      <td>f</td>
-      <td>3</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.10</td>
-    </tr>
-  </tbody>
-</table>
-<p>2 rows × 74 columns</p>
-</div>
-
-
-
-
-```python
-df_listing.columns
-```
-
-
-
-
-    Index(['id', 'listing_url', 'scrape_id', 'last_scraped', 'name', 'description',
-           'neighborhood_overview', 'picture_url', 'host_id', 'host_url',
-           'host_name', 'host_since', 'host_location', 'host_about',
-           'host_response_time', 'host_response_rate', 'host_acceptance_rate',
-           'host_is_superhost', 'host_thumbnail_url', 'host_picture_url',
-           'host_neighbourhood', 'host_listings_count',
-           'host_total_listings_count', 'host_verifications',
-           'host_has_profile_pic', 'host_identity_verified', 'neighbourhood',
-           'neighbourhood_cleansed', 'neighbourhood_group_cleansed', 'latitude',
-           'longitude', 'property_type', 'room_type', 'accommodates', 'bathrooms',
-           'bathrooms_text', 'bedrooms', 'beds', 'amenities', 'price',
-           'minimum_nights', 'maximum_nights', 'minimum_minimum_nights',
-           'maximum_minimum_nights', 'minimum_maximum_nights',
-           'maximum_maximum_nights', 'minimum_nights_avg_ntm',
-           'maximum_nights_avg_ntm', 'calendar_updated', 'has_availability',
-           'availability_30', 'availability_60', 'availability_90',
-           'availability_365', 'calendar_last_scraped', 'number_of_reviews',
-           'number_of_reviews_ltm', 'number_of_reviews_l30d', 'first_review',
-           'last_review', 'review_scores_rating', 'review_scores_accuracy',
-           'review_scores_cleanliness', 'review_scores_checkin',
-           'review_scores_communication', 'review_scores_location',
-           'review_scores_value', 'license', 'instant_bookable',
-           'calculated_host_listings_count',
-           'calculated_host_listings_count_entire_homes',
-           'calculated_host_listings_count_private_rooms',
-           'calculated_host_listings_count_shared_rooms', 'reviews_per_month'],
-          dtype='object')
-
-
-
-
-```python
-df_review.head(5)
-```
-
-
-
-
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>listing_id</th>
-      <th>id</th>
-      <th>date</th>
-      <th>reviewer_id</th>
-      <th>reviewer_name</th>
-      <th>comments</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>5065</td>
-      <td>3578629</td>
-      <td>2013-02-18</td>
-      <td>4574728</td>
-      <td>Terry</td>
-      <td>The place was difficult to find and communicat...</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>5065</td>
-      <td>4412184</td>
-      <td>2013-05-03</td>
-      <td>3067352</td>
-      <td>Olivia</td>
-      <td>Wayne was very friendly and his place is sweet...</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>5065</td>
-      <td>55331648</td>
-      <td>2015-11-29</td>
-      <td>33781202</td>
-      <td>Elspeth And Adam Dobres</td>
-      <td>We loved our time at this BnB! Beautiful surro...</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>5065</td>
-      <td>57598810</td>
-      <td>2015-12-27</td>
-      <td>12288841</td>
-      <td>Lydia</td>
-      <td>The organisation was very uncomplicated,\r&lt;br/...</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>5065</td>
-      <td>58905911</td>
-      <td>2016-01-05</td>
-      <td>41538214</td>
-      <td>Andrew</td>
-      <td>Place was great for what we wanted. Be ready t...</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
 df_listing contains all the metadata for all the listings and df_review has all the review information for each review associated with its list id. Noticed `listing_id` in df_review is `id` in df_listing, it will be the key for our merging.
+
+<br />
 
 ### Data processing:  the number of reviews
 
@@ -343,7 +79,7 @@ listing_reveived_review = process_count(df_review, df_listing)
 listing_reveived_review
 ```
 
-
+output:
 
 
 <div>
@@ -452,7 +188,7 @@ count_per_day_honolulu = count_listings(listing_reveived_review, loc='Honolulu')
 count_per_day_honolulu
 ```
 
-
+output:
 
 
 <div>
@@ -555,7 +291,7 @@ def fit_moving_avg(series, window=5):
 avg_ts = fit_moving_avg(ts)
 ```
 
-Before visualizing 
+<br />
 
 ### Visualization
 
@@ -567,21 +303,25 @@ Before visualizing
 ts.plot(figsize=(16, 4), label='Number of reviews', title='Number of Reviews over time', fontsize=14, alpha=0.6)
 # plot moving average
 avg_ts.plot(label='Average number of reviews', fontsize=14)
-plt.legend(fontsize=14);
+plt.legend(fontsize=14)
 #plt.savefig('moving_avg.png')
 ```
 
+output:
 
     
-![png](output_29_0.png)
+<img src="/assets/images/coordinate_descent.png">
     
 
+<br />
 
-Insights
+#### Insights
 
 - This analysis takes the number of reviews per day as an indicator of Airbnb business activity.  It dramaticly decreased after outbreak of COVID-19 in March, 2020.
 
 - The number of reviews keeps increasing which indicates the popularity of Airbnb was thriving before the pandemic. Meanwhile there is a clear seasonality pattern before the mid of Feb, 2020.
+
+<br />
 
 #### Interactive visualization with `Plotly`
 
@@ -601,8 +341,9 @@ iplot(fig1)
 
 output:
 
-<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~huyuan17/2.embed"></iframe>
+<iframe width="775" height="500" frameborder="0" scrolling="no" src="//plotly.com/~huyuan17/2.embed"></iframe>
 
+<br />
 
 #### Add a `rangeselector`
 
@@ -655,7 +396,7 @@ iplot(fig2)
 
 output:
 
-<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plotly.com/~huyuan17/4.embed"></iframe>
+<iframe width="775" height="500" frameborder="0" scrolling="no" src="//plotly.com/~huyuan17/4.embed"></iframe>
 
 
 Here I will include the code that pushes the plot oject to `plotly express`, which generates embedding information for hosting the interactive image on web pages.
@@ -672,26 +413,13 @@ py.plot(fig2, filename = 'review_over_time', auto_open=True)
 
 
 
-
-    'https://plotly.com/~huyuan17/2/'
-
-
-
-
-```python
-py.plot(fig2, filename = 'review_over_time_rangeselector', auto_open=True)
-```
-
-
-
-
-    'https://plotly.com/~huyuan17/4/'
-
-
+<br />
 
 ## Part 2. Reviews over time via `folium`
 
-### Data processing:
+<br />
+
+### Data processing
 
 #### Count reviews received for each listing each month
 
@@ -845,6 +573,7 @@ listings_with_total_review_count[['id','date','review_count','latitude','longitu
 </div>
 
 
+<br />
 
 #### Transform data to the form that `folium` can take
 
@@ -1051,7 +780,7 @@ review_count_time_map[['latitude','longitude','review_count']]
 </table>
 </div>
 
-
+<br />
 
 Lastly, we just extract the repective `latitude`, `longitude`, and `review_count` to a final form for pass in to the plugin.
 
@@ -1084,6 +813,8 @@ points, indices = generate_location_points(listings_with_total_review_count)[0],
                       generate_location_points(listings_with_total_review_count)[1]
 ```
 
+<br />
+
 ### Visualization - click display button 
 
 
@@ -1097,6 +828,8 @@ hm.add_to(time_map)
 #time_map
 #time_map.save("index.html")
 ```
+
+<br />
 
 ### Insight
 
