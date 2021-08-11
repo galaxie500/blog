@@ -8,7 +8,7 @@ usemathjax: true
 
 <br />
 
-## Introduction
+# Introduction
 
   
 
@@ -18,13 +18,13 @@ This artile will walk through visualizing the fluctuations of Airbnb busineess a
   
 <br />
 
-## Data
+# Data
 
   
 
 The dataset was downloaded from [InsideAirbnb-Hawaii-data](http://insideairbnb.com/get-the-data.html), the analysis results were based on a span of two year from July, 2019 to July, 2021.
 
-## Prerequisite
+# Prerequisite
 
 In addition to commonly used python data science packages(numpy, pandas, matplotlib, seaborn), here we also need install `plotly`, `folium`, `chart-studio`, those can be easily installed via pip under conda environment:
 ~~~sh
@@ -35,11 +35,11 @@ $ pip install chart-studio
 
 <br />
 
-## Part 1. Visualizing with `matplotlib` and `plotly`
+# Part 1. Visualizing with `matplotlib` and `plotly`
 
 <br />
 
-### Inspecting Data
+## Inspecting Data
 
 I will mainly working on `reviews.csv` and `listings.csv`, merging operations will be included later for visulization. 
 
@@ -54,11 +54,11 @@ df_listing contains all the metadata for all the listings and df_review has all 
 
 <br />
 
-### Data processing:  the number of reviews
+## Data processing:  the number of reviews
 
 Apparently, there is no obvious feature indicating the fluctuations of Airbnb busineess activity, however, from df_review we can tell that each listing has received multiple comments in various time, with that being said, we can get all the listings that have received any comment on different dates, then **the count of the total comments on each date will be good enough to indicate the change of business activity**. In addition, we can add any metadata associated with listing based on our needs, for instance, we may consider adding geographic features(`neighbourhood`,`latitude`,`longitude`) since we are creating a folium map later, also this kind of feature helps to segragate the data to better examine the change focusing on a particular area.
 
-#### Inspect the number of reviews over time
+### Inspect the number of reviews over time
 
 
 ```python
@@ -269,7 +269,7 @@ output:
 
 
 
-#### Create time variable
+### Create time variable
 
 
 ```python
@@ -277,7 +277,7 @@ output:
 ts = count_per_day_honolulu.review_count
 ```
 
-#### Fit moving average
+### Fit moving average
 
 
 ```python
@@ -294,9 +294,9 @@ avg_ts = fit_moving_avg(ts)
 
 <br />
 
-### Visualization
+## Visualization
 
-#### via matplotlib
+### via matplotlib
 
 
 ```python
@@ -316,13 +316,13 @@ output:
 
 <br />
 
-#### Insights
+### Insights
 - This analysis takes the number of reviews per day as an indicator of Airbnb business activity.  It dramaticly decreased after outbreak of COVID-19 in March, 2020.
 - The number of reviews keeps increasing which indicates the popularity of Airbnb was thriving before the pandemic. Meanwhile there is a clear seasonality pattern before the mid of Feb, 2020.
 
 <br />
 
-#### Interactive visualization with `Plotly`
+### Interactive visualization with `Plotly`
 
 
 ```python
@@ -359,12 +359,12 @@ py.plot(fig1, filename = 'review_over_time', auto_open=True)
 
 <br />
 
-## Part 2. Reviews over time via `folium HeatMapWithTime` plugin
+# Part 2. Reviews over time via `folium HeatMapWithTime` plugin
 
 
-### Data processing
+## Data processing
 
-#### Count reviews received for each listing each month
+### Count reviews received for each listing each month
 
 As you probably already know, `folium` creates great interactive maps for visualization, here I am going to create a heat map along with time stamp by using its `HeatMapWithTime` plugin, before that there still some processing work need to complete in order to fit our data to the plugin. [A simple Demo](https://github.com/python-visualization/folium/blob/master/examples/HeatMapWithTime.ipynb).
 
@@ -517,7 +517,7 @@ output:
 
 <br />
 
-#### Transform data to the form that `folium` can take
+### Transform data to the form that `folium` can take
 
 For next step, our dataframe should be looking like below:
 
@@ -757,7 +757,7 @@ points, indices = generate_location_points(listings_with_total_review_count)[0],
 
 <br />
 
-### Visualization - click display button 
+## Visualization - click display button 
 
 
 ```python
@@ -776,7 +776,7 @@ output:
 
 <br />
 
-### Insight
+## Insight
 
 - The heat map above indicates how the number of reviews of Airbnb listings changed on Oahu island during 2019-7 to 2021-7
 - Time variable is incremented by month, this can be adjusted to a bigger of smaller increment.

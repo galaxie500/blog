@@ -1,10 +1,11 @@
 ---
 layout: post
-title:  "Monitoring Airbnb reviews over COVID-19 with folium HeatMapWithTime plugin"
+title:  "welcome to jekyll"
 description: Maybe you're familar with a heatmap, what about adding the timestamp on it?
-tags: EDA data-visulization tutorial time-series pandas folium plotly
+tags: ml nlp introduction
 usemathjax: true
 ---
+
 
 # Introduction
 
