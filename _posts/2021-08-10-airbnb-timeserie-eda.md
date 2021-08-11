@@ -521,13 +521,42 @@ output:
 
 For next step, our dataframe should be looking like below:
 
-| time-index  |  latitude | longitude  | review_count  | 
-|---|---|---|---|
-|  date 1 |  a list of latitude | a list of longitude |  a list of review_count |   
-|  date 2 |  a list of latitude | a list of longitude |  a list of review_count |   
-|  date 3 |  a list of latitude | a list of longitude |  a list of review_count |   
-|  ... |  ... | ...  | ...  |
-
+<table>
+<thead>
+  <tr>
+    <th>time-index</th>
+    <th>latitude</th>
+    <th>longitude</th>
+    <th>review_count</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td>2019-7-31</td>
+    <td>a list of latitudes</td>
+    <td>a list of longitude</td>
+    <td>a list of review_count</td>
+  </tr>
+  <tr>
+    <td>2019-8-30</td>
+    <td>a list of latitudes</td>
+    <td>a list of longitude</td>
+    <td>a list of review_count</td>
+  </tr>
+  <tr>
+    <td>...</td>
+    <td>...</td>
+    <td>...</td>
+    <td>...</td>
+  </tr>
+  <tr>
+    <td>2021-7-31</td>
+    <td>a list of latitudes</td>
+    <td>a list of longitude</td>
+    <td>a list of review_count</td>
+  </tr>
+</tbody>
+</table>
 
 ```python
 review_count_time_map = listings_with_total_review_count.drop(['neighbourhood_group_cleansed', 'listing_id'], axis=1)
