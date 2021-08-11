@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Monitoring Airbnb reviews over COVID-19 with folium HeatMapWithTime"
-description: Maybe you're already familar with a folium map, what about adding a timestamp to it?
+description: What is a coordinate descent compared to gradient descent? How to solve it?
 tags: EDA data-visulization tutorial time-series pandas folium plotly
 usemathjax: true
 ---
@@ -9,7 +9,7 @@ usemathjax: true
 
 This artile will walk through visualizing the fluctuations of Airbnb busineess affected by COVID-19 pandemic. Intuitively, we might have a rough guess what the curves will be looking like, however, I thought this would be interesting to practice both data processing and visulization when time-series attributes involved, what's more important, to better explore the data and express the insight to a wide variety of audience in a more approachable manner, an interactive visulization significantly helps.
 
-<iframe src="https://airbnb-map.netlify.app" width="800" height="475"></iframe>
+<iframe src="https://airbnb-map.netlify.app" width="740" height="475"></iframe>
   
 <br />
 
