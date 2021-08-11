@@ -1,17 +1,19 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-description: this article explains something and gives a brief introduction.
-tags: welcome introduction
+title:  "Monitoring Airbnb reviews over COVID-19 with folium HeatMapWithTime plugin"
+description: Maybe you're familar with a heatmap, what about adding the timestamp on it?
+tags: EDA data-visulization tutorial time-series pandas folium plotly
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+# Introduction
 
-> "This is a quote which should be followed"
-> Also I think this sentence is quite long.
-> more quote text to come
->   - Chris Wayne
+This artile will walk through visualizing the fluctuations of Airbnb busineess affected by COVID-19 pandemic. Intuitively, we might have a rough guess what the curve will be looking like, however, I thought this would be interesting to practice both data processing and data visulization when timeseries attribute involved, what's more important, to better explore the data and express the insight to a wide variety of audience in a more approachable manner, an interactive visulization helps.
+
+**Data**
+
+The dataset was downloaded form [InsideAirbnb](http://insideairbnb.com/get-the-data.html), and I am working on Hawaii data, the result mainly display a span of two year from July, 2019 to August, 2021.
+
+
 
 However, these are bulletpoints:
 
