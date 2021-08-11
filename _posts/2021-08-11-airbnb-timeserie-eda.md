@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Monitoring Airbnb reviews over COVID-19 with folium HeatMapWithTime"
-description: What is a coordinate descent compared to gradient descent? How to solve it?
+description: abcde
 tags: EDA data-visulization tutorial time-series pandas folium plotly
 usemathjax: true
 ---
