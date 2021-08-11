@@ -7,6 +7,9 @@ usemathjax: true
 ---
 
 
+
+<iframe src="https://airbnb-map.netlify.app" width="700" height="600"></iframe>
+
 <br />
 
 ## Introduction
@@ -347,59 +350,14 @@ output:
 
 #### Add a `rangeselector`
 
-
-```python
-# Create a layout with a rangeselector and rangeslider on the xaxis
-layout = go.Layout(height=600, width=900, font=dict(size=18),
-                   title='Number of reviews over time(with Range selector)',
-                   xaxis=dict(title='Date',
-                                        # Range selector with buttons
-                                         rangeselector=dict(
-                                             # Buttons for selecting time scale
-                                             buttons=list([
-                                                 # 4 month
-                                                 dict(count=4,
-                                                      label='4m',
-                                                      step='month',
-                                                      stepmode='backward'),
-                                                 # 1 month
-                                                 dict(count=1,
-                                                      label='1m',
-                                                      step='month',
-                                                      stepmode='backward'),
-                                                 # 1 week
-                                                 dict(count=7,
-                                                      label='1w',
-                                                      step='day',
-                                                      stepmode='todate'),
-                                                 # 1 day
-                                                 dict(count=1,
-                                                      label='1d',
-                                                      step='day',
-                                                      stepmode='todate'),
-                                                 # Entire scale
-                                                 dict(step='all')
-                                             ])
-                                         ),
-                                         # Sliding for selecting time window
-                                         rangeslider=dict(visible=True),
-                                         # Type of xaxis
-                                         type='date'),
-                   # yaxis is unchanged
-                   yaxis=dict(title='Number of reviews')
-                   )
-
-# Create the figure and display
-fig2 = go.Figure(data=[r], layout=layout)
-iplot(fig2)
-```
+[rangeSelector](https://gist.github.com/galaxie500/a45e67f59691ddd482956e708a53863e)
 
 output:
 
 <iframe width="775" height="500" frameborder="0" scrolling="no" src="//plotly.com/~huyuan17/4.embed"></iframe>
 
 
-Here I will include the code that pushes the plot oject to `plotly express`, which generates embedding information for hosting the interactive image on web pages.
+Use following snippet to push the plotly object to `plotly express`, which generates embedding information for hosting the interactive image on web pages.
 
 
 ```python
@@ -415,15 +373,14 @@ py.plot(fig2, filename = 'review_over_time', auto_open=True)
 
 <br />
 
-## Part 2. Reviews over time via `folium`
+## Part 2. Reviews over time via `folium HeatMapWithTime` plugin
 
-<br />
 
 ### Data processing
 
 #### Count reviews received for each listing each month
 
-As you probably already know, `folium` creates great interactive maps for visualization, here I am going to create a heat map along with time stamp by using its `HeatMapWithTime` plugin, before that there still some processing work need to complete in order to fit our data to the plugin. [Here is a simplee example provided by folium develop team](https://github.com/python-visualization/folium/blob/master/examples/HeatMapWithTime.ipynb).
+As you probably already know, `folium` creates great interactive maps for visualization, here I am going to create a heat map along with time stamp by using its `HeatMapWithTime` plugin, before that there still some processing work need to complete in order to fit our data to the plugin. [Demo](https://github.com/python-visualization/folium/blob/master/examples/HeatMapWithTime.ipynb).
 
 First, count how many reviews each listing received each day, then change the time range to Month, that is to record how many reviews each listing received each month. The reason that change time range from day to month is we don't want the final display moving too frequently so that we can clearly spot the moving trend.
 
@@ -450,8 +407,7 @@ listings_with_total_review_count = process_listing_total_count(df_review, df_lis
 listings_with_total_review_count[['id','date','review_count','latitude','longitude']]
 ```
 
-
-
+output:
 
 <div>
 <style scoped>
@@ -579,7 +535,7 @@ listings_with_total_review_count[['id','date','review_count','latitude','longitu
 
 For next step, our dataframe should be looking like below:
 
-| time index  |  latitude | longitude  | review_count  | 
+| time-index  |  latitude | longitude  | review_count  | 
 |---|---|---|---|
 |  date 1 |  a list of latitude | a list of longitude |  a list of review_count |   
 |  date 2 |  a list of latitude | a list of longitude |  a list of review_count |   
