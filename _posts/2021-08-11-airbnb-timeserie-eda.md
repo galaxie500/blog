@@ -513,7 +513,7 @@ output:
 
 For next step, our dataframe should be looking like below:
 
-<table>
+<table border="1">
 <thead>
   <tr>
     <th>time-index</th>
