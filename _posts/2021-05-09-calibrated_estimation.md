@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Stretching out support vector machine with calibrated estimation"
+title:  "Stretching out Support Vector Machine with Calibrated Estimation"
 description: This article discusses ways of getting calibrated probability estimates on a linear SVC classifier.
 tags: introduction ml nlp
 usemathjax: true

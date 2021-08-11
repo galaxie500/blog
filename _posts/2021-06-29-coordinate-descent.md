@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Solving a coordinate descent in 3 ways"
+title:  "Solving a Coordinate Descent in Three ways"
 description: What is a coordinate descent compared to gradient descent? How to solve it?
 tags: ml introduction
 usemathjax: true
