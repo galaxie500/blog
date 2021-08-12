@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Monitoring Airbnb reviews over COVID-19 with folium HeatMapWithTime"
-description: May you're already familar with a folium map, what about adding timestamp to it?
+description: May you're already familar with a folium map, 
 tags: EDA data-visulization tutorial time-series pandas folium plotly
 usemathjax: true
 ---
