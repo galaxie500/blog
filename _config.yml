@@ -7,7 +7,7 @@ description: > # this means to ignore newlines until "show_exerpts:"
   Master of Data Science Candidate @ Univ of California San Diego, Data Engineer Intern @ Gotion, Email: huyuan17@gmail.com
 show_excerpts: false # set to true to show excerpts on the homepage
 
-paginate: 5
+paginate: 8
 paginate_path: "/blog/page:num/"
 
 tag_permalink_style: pretty

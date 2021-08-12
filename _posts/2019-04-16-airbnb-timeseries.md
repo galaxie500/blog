@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "welcome to jekyll"
-description: Maybe you're familar with a heatmap, what about adding the timestamp on it?
+description: Maybe you are already familar with a folium heatmap, what about adding the timestamp on it?
 tags: ml nlp introduction
 usemathjax: true
 ---

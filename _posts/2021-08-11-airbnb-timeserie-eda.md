@@ -5,6 +5,7 @@ description: May you're already familar with a folium map, what about adding tim
 tags: EDA data-visulization tutorial time-series pandas folium plotly
 usemathjax: true
 ---
+
 # Introduction  
 
 This artile will walk through visualizing the fluctuations of Airbnb busineess affected by COVID-19 pandemic. Intuitively, we might have a rough guess what the curves will be looking like, however, I thought this would be interesting to practice both data processing and visulization when time-series attributes involved, what's more important, to better explore the data and express the insight to a wide variety of audience in a more approachable manner, an interactive visulization significantly helps.

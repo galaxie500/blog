@@ -1,8 +1,8 @@
 ---
 layout: post
-title:  "Solving a Coordinate Descent in Three ways"
-description: What is a coordinate descent compared to gradient descent? How to solve it?
-tags: ml introduction
+title:  "Solving Logistic Regression with Coordinate Descent in Three ways"
+description: What is coordinate descent compared to gradient descent? How to solve it?
+tags: ml introduction logistic-regression
 usemathjax: true
 ---
 # Introduction

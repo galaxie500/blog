@@ -6,9 +6,10 @@ tags: introduction ml nlp
 usemathjax: true
 ---
 <br />
-**Data**: 3000 lines sentiment text data with labels 0 or 1
+### Data: 
+3000 lines sentiment text data with labels 0 or 1
 
-**Work flow**: (explaination to the methods will be included in each steps)
+### Work flow: (explaination to the methods will be included in each steps)
   1. Text preprocessing
         - Text cleaning
         - Tokenizing
